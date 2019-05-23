@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	count_words
+	1	count_words_isles
+	1	count_words_last
+	1	zipf_test
+	4
+
+[Wed May 22 10:57:46 2019]
+rule count_words_last:
+    input: data/last.txt, source/wordcount.py
+    output: processed_data/last.dat
+    jobid: 3
+
+[Wed May 22 10:57:47 2019]
+Finished job 3.
+1 of 4 steps (25%) done
+
+[Wed May 22 10:57:47 2019]
+rule count_words:
+    input: data/abyss.txt, source/wordcount.py
+    output: processed_data/abyss.dat
+    jobid: 2
+
+[Wed May 22 10:57:47 2019]
+Finished job 2.
+2 of 4 steps (50%) done
+
+[Wed May 22 10:57:47 2019]
+rule count_words_isles:
+    input: data/isles.txt, source/wordcount.py
+    output: processed_data/isles.dat
+    jobid: 1
+
+[Wed May 22 10:57:48 2019]
+Finished job 1.
+3 of 4 steps (75%) done
+
+[Wed May 22 10:57:48 2019]
+rule zipf_test:
+    input: source/zipf_test.py, processed_data/isles.dat, processed_data/abyss.dat, processed_data/last.dat
+    output: results/results.txt
+    jobid: 0
+
+[Wed May 22 10:57:48 2019]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /home/kalle/Skrivbord/coderefinery/word-count/.snakemake/log/2019-05-22T105746.846224.snakemake.log

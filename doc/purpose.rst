@@ -10,3 +10,4 @@ Zipf's law
 ----------
 
 This is some weird word count stuff that I don't really get at this point. 
+Me neither. 

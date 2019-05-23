@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /home/kalle/Skrivbord/coderefinery/word-count/Snakefile:
+Missing input files for rule alldata:
+processed_data/abyss.datprocessed_data/last.dat
